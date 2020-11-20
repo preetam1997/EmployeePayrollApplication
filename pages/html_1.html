@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../css/css_5.css">
     <title>Employee Payroll Form</title>
     <script defer src="../js/js_1.js"></script>
+    <script defer src="../js/js_2.js"></script>
+    <script defer src="../js/js_3.js"></script>
 </head>
 <body>
     <header class="header-content header">
@@ -22,14 +24,15 @@
             </div>
         </div>
     </header>
-    <div class="form-content">
-        <form class="form" action="#" onsubmit="save();return false">
+    <div id="formId" class="form-content">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
             <div class="form-head">
                 Employee Payroll Form
             </div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Your name...." required>
+                <error-output class="text-error" for="text"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="profile">Profile Image</label>
