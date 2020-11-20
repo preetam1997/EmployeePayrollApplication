@@ -9,3 +9,13 @@ salary.addEventListener("input",function(){
 
 
 
+
+
+
+
+ 
+ 
+
+
+
+
