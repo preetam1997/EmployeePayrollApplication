@@ -28,6 +28,7 @@ function save(){
         let employeePayrollData = createEmployeePayroll();
         createAndUpdateStorage(employeePayrollData);
     }catch(e){
+        console.error(e);
         return;
     }
 }
@@ -58,7 +59,8 @@ const createEmployeePayroll=()=>{
     employeePayrollData.salary = getInputValueById("#salary");
     employeePayrollData.note = getInputValueById("#notes");
     let date = getInputValueById("#day")+" "+getInputValueById("#month")+" "+getInputValueById("#year");
-    employeePayrollData.date = Date.parse(date);
+    employeePayrollData.startDate= new Date(Date.parse(date)).toLocaleDateString("en-GB", {year : 'numeric',month : 'long',day : 'numeric'});
+    console.log(employeePayrollData.toString());
     alert(employeePayrollData.toString());
     return employeePayrollData;
 }
@@ -93,6 +95,7 @@ const resetForm = ()=>{
     setValue("#day","1");
     setValue("#month","January");
     setValue("#year","2020");
+    localStorage.clear();
 }
 
 const unsetSelectValues = (propertyValue) =>{
